@@ -1,5 +1,5 @@
 PROJECT_NAME=homevideo
-VERSION=0.1
+VERSION=0.1.0
 
 .PHONY: all build test vendor version
 
@@ -9,7 +9,10 @@ version:
 all: build test
 
 build:
-	go build -mod=vendor ./cmd/homevideo
+	go build -o ./builds/ -mod=vendor ./cmd/homevideo 
+
+run:
+	make build && ./homevideo
 
 test:
 	go test ./pkg/... -coverprofile=coverage.out && go tool cover -func=coverage.out
