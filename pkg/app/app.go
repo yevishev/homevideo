@@ -12,7 +12,6 @@ func Start() {
 		return c.JSON(http.StatusBadGateway, []string{
 			"foo",
 			"bar",
-			"fyz",
 		})
 	})
 
