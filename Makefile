@@ -9,10 +9,10 @@ version:
 all: build test
 
 build:
-	go build -o ./builds/ -mod=vendor ./cmd/homevideo 
+	go build -o ./builds/ -mod=vendor ./cmd/homevideo
 
 run:
-	make build && ./homevideo
+	make build && ./builds/homevideo
 
 test:
 	go test ./pkg/... -coverprofile=coverage.out && go tool cover -func=coverage.out
